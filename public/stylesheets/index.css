@@ -1,0 +1,170 @@
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 20px;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.blocks-bg {
+  background-color: #f8f6ee;
+}
+
+
+.titleBox {
+  position: relative;
+  margin-bottom: 30px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.titleBox h2 {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 400;
+  font-size: 21px;
+  letter-spacing: .05em;
+  position: relative;
+}
+
+.titleBox h2:before,
+.titleBox h2:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 1px;
+  background-color: #000;
+  display: block;
+}
+
+.titleBox h2:before {
+  top: 50%;
+  left: calc(100% + 20px);
+}
+
+.titleBox h2:after {
+  top: 50%;
+  right: calc(100% + 20px);
+}
+
+.titleBox em {
+  font-family: 'Cormorant', serif;
+  font-weight: 500;
+  font-size: 50px;
+  text-transform: uppercase;
+  color: #998067;
+}
+
+.Imgblocks {
+  position: relative;
+  height: 18%;
+  width: 18%;
+}
+
+.imgText {
+  font-size: 20px;
+  color: white;
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+
+
+.Imgblocks:hover {
+  transform: scale(1.05);
+  /* 調整放大倍率，1.1 表示 110% 的大小 */
+  transition: transform 0.3s ease;
+}
+
+.specialty {
+  position: relative;
+  height: 550px;
+  /* 根据需要设置高度 */
+  background-image: url('../images/index/specialty.png');
+  background-size: cover;
+  /* 以覆盖整个容器为目标 */
+  background-position: center center;
+  /* 居中显示 */
+}
+
+.specialty::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* 半透明的黑色背景 */
+  z-index: 1;
+}
+
+.specialtyTitle {
+  font-family: 'Noto Serif TC', serif;
+  top: 50px;
+  position: relative;
+  /* 或者使用 position: absolute; */
+  z-index: 200;
+  color: white;
+}
+
+.SpecialtyBlock {
+  position: relative;
+  /* 或者使用 position: absolute; */
+  color: white;
+  z-index: 300;
+  top: 110px;
+}
+
+.specialty a {
+  position: relative;
+  /* 或者使用 position: absolute; */
+  z-index: 400;
+  top: 150px;
+}
+
+.brandImgContainer {
+  width: 100px;
+  height: 57px; 
+}
+
+.brandContainer{
+  align-self: stretch;
+  align-content: center;
+  gap: 15px 42px;
+}
+
+.product-card-text {
+  white-space: nowrap; /* 防止文本换行 */
+  overflow: hidden; /* 隐藏溢出的文本 */
+
+}
+
+.card-title{
+  font-family: 'Noto Serif TC', serif;
+  color: black; /* 設定超連結文字顏色為黑色 */
+}
+
+.card-price{
+  color: #A67A2B;
+  font-family: 'Noto Serif TC', serif;
+}
+
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05); /* 這裡的值可以根據需要進行調整 */
+}
+
+

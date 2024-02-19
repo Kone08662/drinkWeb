@@ -1,0 +1,71 @@
+<header>
+  <!-- nav -->
+  <nav class="navbar navbar-light navbar-expand-lg border-bottom">
+    <div class="container-fluid">
+      <!-- icon & logo -->
+      <div class="d-flex align-items-center">
+        <a class="navbar-brand" href="/">
+          <div class="d-flex align-items-center">
+            <img src="/images/icon.png" alt="logo" width="40" height="29" class="d-inline-block align-text-top">
+            <span id="logoText">喝酒網</span>
+          </div>
+        </a>
+        <!-- nav選項 -->
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <!-- 選項1 -->
+          <li class="nav-item dropdown" aria-current="page">
+            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" data-bs-hover="dropdown" aria-expanded="false">
+              產品
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="/products">全部產品</a></li>
+              <li><a class="dropdown-item" href="/products/category/威士忌">威士忌</a></li>
+              <li><a class="dropdown-item" href="/products/category/白蘭地">白蘭地</a></li>
+              <li><a class="dropdown-item" href="/products/category/調烈酒">調烈酒</a></li>
+              <li><a class="dropdown-item" href="/products/category/葡萄酒">葡萄酒</a></li>
+            </ul>
+          </li>
+          <!-- 選項2 -->
+          <li class="nav-item">
+            <a class="nav-link" href="/about">關於我們</a>
+          </li>
+          <!-- 選項3 -->
+          <li class="nav-item">
+            <a class="nav-link" href="/deliver">配送資訊</a>
+          </li>
+          <!-- 選項4 -->
+          <li class="nav-item">
+            <a class="nav-link" href="/FAQ">FAQ常見問題</a>
+          </li>
+        </ul>
+      </div>
+      <!-- 會員 & 訂單 & 搜尋 -->
+      <div class="ml-auto">
+        <!-- 會員選項 -->
+        <a href="/members/login" class="me-3" id="myMember">
+          <i class="bi bi-person h3"></i>
+        </a>
+        <!-- 訂單選項 -->
+        <a href="#" class="me-3" id="myOrder" data-bs-toggle="offcanvas" data-bs-target="#order" aria-controls="order">
+          <i class="bi bi-bag-heart h4"></i>
+        </a>
+        <!-- 搜尋 -->
+        <a href="#" class="me-2" id="mySearch">
+          <i class="bi bi-search h4"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- 訂單選項(展開) -->
+<div class="container offcanvas offcanvas-end" tabindex="-1" id="order" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel">您的訂單</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <!-- 訂單內容 -->
+    <!-- ... -->
+  </div>
+</div>

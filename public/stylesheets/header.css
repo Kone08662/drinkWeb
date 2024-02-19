@@ -1,0 +1,45 @@
+/*中文字體*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap');
+/*英文字體*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap');
+
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 20px;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+#logoText{
+  font-size: 40px;
+  color: black;
+}
+
+/* 超連結顏色不顯示 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#myMember, #myOrder, #mySearch {
+  color: black; /* 設定超連結文字顏色為黑色 */
+}
+
+#myMember:hover, #myOrder:hover, #mySearch:hover {
+  /*text-decoration: underline;  滑鼠懸停時添加底線效果 */
+  font-size: 1.01em; /* 滑鼠懸停時字體放大 1.1 倍 */
+  transition: font-size 0.1s ease-in-out; /* 增加平滑過渡效果 */
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+
+

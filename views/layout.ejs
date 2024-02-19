@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <link rel="icon" href="/images/icon2.png" type="image/x-icon">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <!-- Bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- <Magnific-Popup  CSS> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+  <!-- header.css -->
+  <link rel="stylesheet" href="/stylesheets/header.css">
+  <!-- footer.css -->
+  <link rel="stylesheet" href="/stylesheets/footer.css">
+  <!-- page specific scripts -->
+  <%- stylesheets %>
+
+  <!-- title -->
+  <title> <%= title %> </title>
+
+</head>
+
+<body>
+
+  <!-- header -->
+  <%- partial('partial/header') %>
+
+  <!-- main -->
+  <%- body %>
+
+  <!-- footer -->
+  <%- partial('partial/footer') %>
+
+  
+
+  
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  <!-- axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- Magnific-Popup JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+  <!-- header js -->
+  <script src="/javascripts/header.js"></script>
+  <!-- page specific scripts -->
+  <%- scripts %>
+
+</body>
+
+</html>

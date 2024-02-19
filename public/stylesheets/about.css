@@ -1,0 +1,5 @@
+main {
+    flex: 1; /* 讓 main 佔滿剩餘的空間 */
+    background-color: rgba(251, 250, 247, 1);
+    line-height: 1.7; /* 設定行高為1.5倍 */
+}

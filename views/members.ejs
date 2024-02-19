@@ -1,0 +1,32 @@
+<% layout('layout') %>
+<% script('/javascripts/members.js') %>
+<% stylesheet('/stylesheets/members.css') %>
+
+<main class="container">
+  <div class="p-5">
+    <!-- 帳戶資訊 -->
+    <div class="d-flex flex-column w-75">
+      <h2>帳戶資訊</h2>
+      <div class="d-flex row border rounded-5 shadow mt-1 p-5">
+        <div class="col-10">
+          信箱 : <%= memberData.email %> <br>
+          電話 : <%= memberData.phone %> <br>
+          地址 : <%= memberData.address %>
+        </div>
+        <div class="col-2">
+          <a type="button" class="btn btn-primary btn-lg">登出</a>
+        </div>
+      </div>
+
+    </div>
+    <!-- 我的詢價單 -->
+    <div class="d-flex flex-column mt-5 w-75">
+      <h2>我的詢價單</h2>
+      <div class="border rounded-5 shadow mt-1 p-5">
+        信箱 : <%= memberData.email %> <br>
+        電話 : <%= memberData.phone %> <br>
+        地址 : <%= memberData.address %>
+      </div>
+    </div>
+  </div>
+</main>

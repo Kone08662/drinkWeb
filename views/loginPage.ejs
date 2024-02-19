@@ -1,0 +1,53 @@
+<% layout('layout') %>
+<% script('/javascripts/loginPage.js') %>
+<% stylesheet('/stylesheets/loginPage.css') %>
+
+<main class="container">
+  <div class="d-flex align-items-center justify-content-center p-5 vh-100">
+    <div class="d-flex align-items-center justify-content-center row shadow-lg rounded-4 p-5">
+      <!-- logo img -->
+      <div class="col-md-6">
+        <img src="/images/logo.png" class="img-fluid" alt="logo.png">
+      </div>
+      <div class="col-md-6">
+        <form id="loginForm" method="post" action="/members/login">
+          <h3>會員登入</h3>
+          <!-- email -->
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control rounded-4" name="email" id="email" placeholder="name@example.com" autocomplete="email">
+            <label for="email">Email</label>
+            <!-- email err msg -->
+            <div class="errMsgEmail text-danger"></div>
+          </div>
+          <!-- password -->
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control rounded-4" name="password" id="password" placeholder="Password" autocomplete="current-password">
+            <label for="password">Password</label>
+            <!-- password err msg -->
+            <div class="errMsgPassword text-danger"></div>
+          </div>
+          <!-- sing up -->
+          <button class="w-100 mt-2 mb-2 btn btn-lg rounded-4 btn-primary" type="submit">Login</button>
+          <a href="#" class="text-muted">還沒有加入會員嗎? 點擊註冊</a>
+          <hr class="my-3">
+          <h2 class="fs-5 fw-bold mb-3">或使用其他方式</h2>
+          <!-- twitter -->
+          <button class="w-100 py-2 mb-2 btn btn-outline-dark rounded-4" type="button">
+            <i class="bi bi-twitter-x h6"></i>
+            Sign up with Twitter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </button>
+          <!-- facebook -->
+          <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-4" type="button">
+            <i class="bi bi-facebook h6"></i>
+            Sign up with Facebook&nbsp;
+          </button>
+          <!-- instagram -->
+          <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-4" type="button">
+            <i class="bi bi-instagram h6"></i>
+            Sign up with Instagram
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>

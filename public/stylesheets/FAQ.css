@@ -1,0 +1,14 @@
+main {
+    flex: 1; /* 讓 main 佔滿剩餘的空間 */
+}
+
+main span{
+    font-family: 'Cormorant', serif;
+    color: #8c8170;
+}
+
+.questionsTitle{
+    background-color: #f7f4e5;
+    padding: 22px 23px ;
+    border-radius: 25px; /* 圓角 */
+}

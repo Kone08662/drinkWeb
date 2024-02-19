@@ -1,0 +1,9 @@
+main {
+    flex: 1; /* 讓 main 佔滿剩餘的空間 */
+    background-color: rgba(251, 250, 247, 1);
+}
+
+main span{
+    font-family: 'Cormorant', serif;
+    color: #8c8170;
+}

@@ -1,0 +1,51 @@
+<% layout('layout') %>
+<% stylesheet('/stylesheets/productDetail.css') %>
+<% script('/javascripts/productDetail.js') %>
+
+<main class="container-fluid d-flex align-items-center justify-content-center p-5">
+  <!-- 產品區塊 -->
+  <div class="productBlock m-5 p-4 shadow">
+    <div class="row">
+      <!-- 產品圖片 -->
+      <div class="col-md-6 m-0">
+        <img src="/images/products/<%= productData.id %>.png" class="img-fluid" alt="<%= productData.id %>.png">
+      </div>
+      <!-- 介紹區 -->
+      <div class="col-md-6 text-start my-4">
+        <!-- 標題 -->
+        <div class="title">
+          <p class="h6"><%= productData.product_name_e %></p>
+          <p class="h3"><%= productData.product_name %></p>
+        </div>
+        <!-- 敘述 -->
+        <div class="mt-4 border-bottom border-3 my-2"></div>
+        <p>
+            <%= productData.description %>
+        </p>
+        <div class="mt-4 border-bottom border-3 my-2"></div>
+        <!-- 規格 -->
+        <div class="d-flex flex-column align-items-start">
+          <i class="bi bi-droplet">酒精濃度 : <%= productData.alcohol %>%</i>
+          <i class="bi bi-globe-asia-australia">國家 : <%= productData.country %></i>
+          <i class="bi bi-bookmark">品牌 / 酒莊 : <%= productData.brand %></i>
+          <i class="bi bi-moisture">容量 : <%= productData.capacity %>ml</i>
+        </div>
+        <div class="mt-4 border-bottom border-3 my-2"></div>
+        <!-- 價格&數量 -->
+        <div class="d-flex justify-content-between mt-5">
+          <div class="mt-3">
+            <span>數量</span><br>
+            <input type="number" id="quantity" class="text-center" value="1" min="1" max="100">
+          </div>
+          <div class="text-end">
+            <del>市價$<%= productData.market_price %>元</del><br>
+            <h1 class="price" id="price">$<%= productData.price %> 元</h1>
+          </div>
+        </div>
+        <!-- 按鈕 -->
+        <div class="d-grid mt-4">
+          <button type="button" class="btn btn-outline-dark btn-lg" onclick="sendOrder('<%= productData.id %>')">加入詢價單</button>
+        </div>
+      </div>
+    </div>
+</main>

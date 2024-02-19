@@ -1,0 +1,28 @@
+<% layout('layout') %>
+<% stylesheet('/stylesheets/products.css') %>
+
+<main class="container-fluid">
+  <!-- 標題 -->
+  <h1 class="text-center p-5">
+    <%= secondTitle %>
+  </h1>
+  <div class="border rounded-3 p-3" style="background-color:#f7f4e5;"></div>
+  <!-- 商品 -->
+  <div class="row row-cols-1 row-cols-md-5 g-3 justify-content-start p-5">
+    <% productData.forEach(product => { %>
+    <div class="col">
+      <a href="/products/<%= product.id %>" class="card text-center shadow border-0" style="height: 100%;">
+        <img src="/images/products/<%= product.id %>.png" alt="<%= product.product_name %>" class="card-img-top" style="height: 50%;">
+        <div class="card-body d-flex flex-column" style="height: 50%; overflow: hidden;">
+          <p class="card-title h5 mb-0"><%= product.product_name %></p>
+          <p class="card-text text-muted product-card-text pt-2 h6 mb-0"><%= product.product_name_e %></p>
+          <p class="card-text card-price h3 mt-auto">$<%= product.price %></p>
+          <del class="card-text text-muted deleted-text h6">市價$<%= product.market_price %></del>
+        </div>
+      </a>
+    </div>
+    <% }); %>
+  </div>
+
+
+</main>

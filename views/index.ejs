@@ -1,0 +1,323 @@
+<% layout('layout') %>
+<% script('/javascripts/index.js') %>
+<% stylesheet('/stylesheets/index.css') %>
+
+<main>
+  <!-- carousel 輪播 -->
+  <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <!-- 內容 -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/images/index/carousel/202312_01.jpg" class="d-block w-100" alt="AD_img">
+      </div>
+      <div class="carousel-item">
+        <img src="/images/index/carousel/202312_02.jpg" class="d-block w-100" alt="AD_img">
+      </div>
+      <div class="carousel-item">
+        <img src="/images/index/carousel/202312_03.jpg" class="d-block w-100" alt="AD_img">
+      </div>
+    </div>
+    <!-- 控制器 -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- 產品分類 -->
+  <section class="productsBlocks blocks-bg py-5">
+    <!-- 標題 -->
+    <div class="titleBox py-1">
+      <em>Product</em>
+      <h2>產品分類</h2>
+    </div>
+    <!-- 圖片 -->
+    <div class="d-flex justify-content-center mt-3">
+      <!-- 威士忌區塊 -->
+      <div class="Imgblocks m-2 shadow">
+        <a href="/products/category/威士忌">
+          <img src="/images/index/productsBlocks/whisky.png" class="img-fluid rounded-3" alt="WhiskyBlocks">
+          <span class="imgText">┃ 威士忌</span>
+          <span class="imgText" style="top: 28px;">┃ Whisky</span>
+        </a>
+      </div>
+      <!-- 白蘭地區塊 -->
+      <div class="Imgblocks m-2 shadow">
+        <a href="/products/category/白蘭地">
+          <img src="/images/index/productsBlocks/Brandy.png" class="img-fluid rounded-3" alt="CongacBlocks">
+          <span class="imgText">┃ 白蘭地</span>
+          <span class="imgText" style="top: 28px;">┃ Congac</span>
+        </a>
+      </div>
+      <!-- 調烈酒區塊 -->
+      <div class="Imgblocks m-2 shadow">
+        <a href="/products/category/調烈酒">
+          <img src="/images/index/productsBlocks/Spirits.png" class="img-fluid rounded-3" alt="Spirits&BaseBlocks">
+          <span class="imgText">┃ 調烈酒</span>
+          <span class="imgText" style="top: 28px;">┃ Spirits & Base</span>
+        </a>
+      </div>
+      <!-- 調烈酒區塊 -->
+      <div class="Imgblocks m-2 shadow">
+        <a href="/products/category/葡萄酒">
+          <img src="/images/index/productsBlocks/wine.png" class="img-fluid rounded-3" alt="WineBlocks">
+          <span class="imgText">┃ 葡萄酒</span>
+          <span class="imgText" style="top: 28px;">┃ Wine</span>
+        </a>
+      </div>
+  </section>
+
+  <!-- 新品上市 -->
+  <section>
+    <!-- 標題 -->
+    <div class="titleBox pt-3">
+      <em>New Arrival</em>
+      <h2>新品上市</h2>
+    </div>
+    <!-- 商品 -->
+    <div class="row row-cols-1 row-cols-md-5 g-3 pt-3 pb-5 justify-content-center px-5">
+      <% newArrivalData.forEach(product => { %>
+      <div class="col">
+        <a href="/products/<%= product.id %>" class="card text-center shadow border-0" style="height: 100%;">
+          <img src="/images/products/<%= product.id %>.png" alt="<%= product.product_name %>" class="card-img-top" style="height: 50%;">
+          <div class="card-body d-flex flex-column" style="height: 50%; overflow: hidden;">
+            <p class="card-title h5 mb-0"><%= product.product_name %></p>
+            <p class="card-text text-muted product-card-text pt-2 h6 mb-0"><%= product.product_name_e %></p>
+            <p class="card-text card-price h3 mt-auto">$<%= product.price %></p>
+            <del class="card-text text-muted deleted-text h6">市價$<%= product.market_price %></del>
+          </div>
+        </a>
+      </div>
+      <% }); %>
+    </div>
+  </section>
+
+  <!-- 最新消息 -->
+  <section class="news blocks-bg pt-3">
+    <!-- 標題 -->
+    <div class="titleBox">
+      <em>NEWS</em>
+      <h2>最新消息</h2>
+    </div>
+    <!-- 輪播 -->
+    <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner pt-3 pb-5">
+        <!-- 消息1 -->
+        <div class="carousel-item active">
+          <div class="card mx-5">
+            <div class="row g-1">
+              <div class="col-md-4">
+                <a class="enlarge-img" href="/images/index/news/202401_01.png" title="春節營業時間">
+                  <img src="/images/index/news/202401_01.png" class="img-fluid rounded-start" alt="春節營業時間">
+                </a>
+              </div>
+              <div class="col-md d-flex flex-column justify-content-between">
+                <div class="card-body">
+                  <h2 class="card-title">春節營業時間🧨</h2>
+                  <p class="card-text mt-4">
+                    【喝酒網門市春節營業時間】</br>
+                    ．除夕：各門市營業至晚上6點</br>
+                    ．初一－初三：各門市公休</br>
+                    ．初四：恢復正常營業時間</br></br>
+                    如有疑問，歡迎加入官方LINE@，將有客服人員協助您處理～喝酒網在此預祝各位新年快樂！龍年行大運，好運巄總來🐲🧧🧨
+                  </p>
+                </div>
+                <p class="text-end mb-2 me-2 "><small class="text-muted">2024/01/25</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 消息2 -->
+        <div class="carousel-item">
+          <div class="card mx-5">
+            <div class="row g-1">
+              <div class="col-md-4">
+                <a class="enlarge-img" href="/images/index/news/202401_02.png" title="春節營業時間">
+                  <img src="/images/index/news/202401_02.png" class="img-fluid rounded-start" alt="春節營業時間">
+                </a>
+              </div>
+              <div class="col-md d-flex flex-column justify-content-between">
+                <div class="card-body">
+                  <h2 class="card-title">格蘭路思享好禮</h2>
+                  <p class="card-text mt-4">
+                    現在正是收藏格蘭路思Whisky Maker's Cut的最好時機！因為之後它就要停產了！</br></br>
+                    即日起入手格蘭路思Whisky Maker's Cut滿3瓶，即可獲得限量格蘭路思迷你酒樣品組1組，數量有限！
+                  </p>
+                </div>
+                <p class="text-end mb-2 me-2 "><small class="text-muted">2024/01/23</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 消息3 -->
+        <div class="carousel-item">
+          <div class="card mx-5">
+            <div class="row g-1">
+              <div class="col-md-4">
+                <a class="enlarge-img" href="/images/index/news/202401_03.png" title="春節營業時間">
+                  <img src="/images/index/news/202401_03.png" class="img-fluid rounded-start" alt="春節營業時間">
+                </a>
+              </div>
+              <div class="col-md d-flex flex-column justify-content-between">
+                <div class="card-body">
+                  <h2 class="card-title">梅乃宿青龍白虎</h2>
+                  <p class="card-text mt-4">
+                    過年歡聚不能少的就是山珍海味🍲🦐助興清酒更是不可缺席！</br></br>
+                    帶上「左青龍、右白虎」坐鎮，讓您今年慶團圓美味特別加乘！
+                  </p>
+                </div>
+                <p class="text-end mb-2 me-2 "><small class="text-muted">2024/01/26</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 控制器 -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+  </section>
+
+  <!-- 專業特色 -->
+  <section class="specialty">
+    <!-- 標題 -->
+    <div class="specialtyTitle d-flex justify-content-center">
+      <h2>品質之選&nbsp;&nbsp;&nbsp;盡在喝酒網</h2>
+    </div>
+    <!-- 內文 -->
+    <div class="SpecialtyBlock d-flex justify-content-center text-center px-4">
+      <!-- 豐富酒品嚴選 -->
+      <div class="row align-items-center mx-1">
+        <div class="col-md my-auto">
+          <i class="bi bi-star h2"></i>
+          <p>豐富酒品嚴選</p>
+          <p class="text-start">無論您是專業品飲、新手或是挑選禮品，我們提供最齊全、最專業品項的選擇和服務，並定期引進新品讓您不斷發現驚喜。</p>
+        </div>
+      </div>
+      <!-- 品質保證 -->
+      <div class="row align-items-center mx-1">
+        <div class="col-md my-auto">
+          <i class="bi bi-patch-check h2"></i>
+          <p>品質保證</p>
+          <p class="text-start">喝酒網是官方授權經銷商，每款酒品都可追本溯源，公司貨讓您收藏有保障，不再擔心市面上的偽造品或假酒。</p>
+        </div>
+      </div>
+      <!-- 安心配送 -->
+      <div class="row align-items-center mx-1">
+        <div class="col-md my-auto">
+          <i class="bi bi-truck h2"></i>
+          <p>安心配送</p>
+          <p class="text-start">注重每筆訂單的完整性，使用氣泡布包裹，確保運送過程不受損害。外縣市搭配黑貓宅配快速到貨，大台北地區自家車隊提供快速便利的送貨服務。</p>
+        </div>
+      </div>
+      <!-- 專業酒品諮詢 -->
+      <div class="row align-items-center mx-1">
+        <div class="col-md my-auto">
+          <i class="bi bi-chat-left-dots h2"></i>
+          <p>專業酒品諮詢</p>
+          <p class="text-start">團隊擁有多年行業經驗，針對酒品知識和風味深刻了解。了解您的口味、喜好和需求，提供您個性化建議、最新趨勢確保您獲得完美的酒品選擇。</p>
+        </div>
+      </div>
+    </div>
+    <!-- 探索品牌故事 -->
+    <div class="d-flex justify-content-center">
+      <a class="btn btn-dark btn-lg border align-items-center" href="/about" role="button">探索品牌故事</a>
+    </div>
+  </section>
+
+  <!-- 品牌授權 -->
+  <section class="blocks-bg py-5">
+    <!-- 標題 -->
+    <div class="titleBox py-1">
+      <em>Distributed Brands</em>
+      <h2>經銷品牌</h2>
+    </div>
+    <!-- 品牌圖片 -->
+    <div class="d-flex">
+      <div class="d-flex align-items-center justify-content-center flex-wrap brandContainer">
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-1.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-2.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-3.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-4.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-5.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-6.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-7.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-8.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-9.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-10.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-11.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-12.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-13.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-14.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-15.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-16.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-17.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-18.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-19.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-20.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-21.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-22.png" class="img-fluid" alt="brandImg">
+        </div>
+        <div class="brandImgContainer">
+          <img src="/images/index/Brands/brand-23.png" class="img-fluid" alt="brandImg">
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

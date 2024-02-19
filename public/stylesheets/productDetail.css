@@ -1,0 +1,18 @@
+main {
+    flex: 1;/* 讓 main 佔滿剩餘的空間 */
+    background-color: rgba(251, 250, 247, 1);
+}
+
+.productBlock{
+    background-color: white;
+}
+
+.title{
+    color: #A67A2B;
+    font-family: 'Noto Serif TC', serif;
+}
+
+.price{
+    color: #A67A2B;
+    font-family: 'Noto Serif TC', serif;
+}
