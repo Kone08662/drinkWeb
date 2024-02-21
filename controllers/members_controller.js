@@ -11,7 +11,7 @@ export default class membersController {
       // 檢查是否已經登入
       if (req.session.email) {
 
-        return res.render('members', {
+        return res.render('members/members', {
 
           title: '喝酒網-會員專區',
           memberData: req.session
@@ -21,7 +21,7 @@ export default class membersController {
       }
       
       //沒有紀錄
-      res.render('loginPage', {
+      res.render('members/loginPage', {
 
         title: '喝酒網-會員登入',
 
@@ -56,7 +56,7 @@ export default class membersController {
         req.session.phone = sqlData[0].phone;
         req.session.address = sqlData[0].address;
 
-        return res.render('members', {
+        return res.render('members/members', {
 
           title: '喝酒網-會員專區',
           memberData: req.session

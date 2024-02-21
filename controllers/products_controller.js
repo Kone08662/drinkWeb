@@ -14,7 +14,7 @@ export default class ProductsController {
 
       const sqlData = await productsModel.getAllProductData(); // 執行資料庫查詢
 
-      res.render('products', {
+      res.render('product/products', {
 
         title: '喝酒網-全部產品',
         secondTitle:'全部產品',
@@ -41,7 +41,7 @@ export default class ProductsController {
 
       const sqlData = await productsModel.getCategoryProductData(req.params.category); // 執行資料庫查詢
 
-      res.render('products', {
+      res.render('product/products', {
 
         title: `喝酒網-${req.params.category}`,
         secondTitle:`${req.params.category}專區`,
@@ -68,7 +68,7 @@ export default class ProductsController {
 
       const sqlData = await productsModel.getOneProductData(req.params.id); // 執行資料庫查詢
 
-      res.render('productDetail', {
+      res.render('product/productDetail', {
 
         title: `喝酒網-${sqlData.product_name}`,
         productData: sqlData

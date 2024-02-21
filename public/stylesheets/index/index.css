@@ -89,7 +89,7 @@ body {
   position: relative;
   height: 550px;
   /* 根据需要设置高度 */
-  background-image: url('../images/index/specialty.png');
+  background-image: url('../../images/index/specialty.png');
   background-size: cover;
   /* 以覆盖整个容器为目标 */
   background-position: center center;

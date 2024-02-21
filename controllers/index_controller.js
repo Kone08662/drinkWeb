@@ -13,7 +13,7 @@ export default class IndexController {
 
     try {
 
-      res.render('index', {
+      res.render('index/index', {
         title: '喝酒網',
         newArrivalData: sqlData
       })
@@ -35,7 +35,7 @@ export default class IndexController {
 
     try {
 
-      res.render('about', {
+      res.render('index/about', {
         title: '喝酒網-關於我們',
       })
 
@@ -56,7 +56,7 @@ export default class IndexController {
 
     try {
 
-      res.render('deliver', {
+      res.render('index/deliver', {
         title: '喝酒網-配送資訊',
       })
 
@@ -77,7 +77,7 @@ export default class IndexController {
 
     try {
 
-      res.render('FAQ', {
+      res.render('index/FAQ', {
         title: '喝酒網',
       })
 
