@@ -47,6 +47,11 @@ app.use(session({
 
 // express-flash
 app.use(flash());
+app.use((req, res, next) => {
+	//放在 res.locals 裡的資料，所有的 view 都可以存取。
+  res.locals.messages = req.flash('messages')  // 設定 msg 訊息
+  next();
+});
 
 
 //================= route 相關 =================

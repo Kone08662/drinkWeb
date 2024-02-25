@@ -28,39 +28,14 @@ document.getElementById('loginForm').addEventListener('submit', (event) => {
 
     } else {
 
-        // 使用 Axios 發送 POST 請求到伺服器
-        axios.post('/members/login', { email, password })
-            .then(res => {
-
-                // 清空錯誤信息
-                errMsgEmail.textContent = '';
-                errMsgPassword.textContent = '';
-
-                if (res.data.status === 'err') {
-
-                    // 更新錯誤信息
-                    errMsgEmail.textContent = res.data.message;
-                    errMsgPassword.textContent = res.data.message;
-
-                }else{
-
-                     form.submit();//待處理
-
-                }
-      
-            })
-            .catch(error => {
-
-                alert('伺服器發生錯誤，請稍後再試', error);
-
-            });
+        form.submit();//送出表單
 
     }
 });
 
 
 
-const checkEmail = email => {
+const checkEmail = email => {//檢查信箱
     // 檢查是否為空
     if (!email.trim()) {
         return false;
@@ -70,7 +45,7 @@ const checkEmail = email => {
     return emailRegex.test(email);
 };
 
-const checkPassword = password => {
+const checkPassword = password => {//檢查密碼
     // 檢查是否為空
     if (!password.trim()) {
         return false;

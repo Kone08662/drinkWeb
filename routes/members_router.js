@@ -17,6 +17,8 @@ router.get('/login', membersController.loginPage);
 //登入route
 router.post('/login', membersController.login);
 
+//登出
+router.get('/logout', membersController.logout);
 
 
 export default router;
